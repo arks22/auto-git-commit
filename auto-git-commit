@@ -14,7 +14,7 @@ git_commit_automatically() {
   [ -z $new_files ] || message+="add:[$( echo ${new_files} | sed -e "s/,\$//") ] "
   [ -z $deleted_files ] || message+="remove:[$( echo ${deleted_files} | sed -e "s/,\$//") ] "
   [ -z $renamed_files ] || message+="rename:[$( echo ${renamed_files} | sed -e "s/,\$//") ] "
-  [ -z $modified_files ] || message+="improve:[$( echo ${modified_files} | sed -e "s/,\$//") ] "
+  [ -z $modified_files ] || message+="modified:[$( echo ${modified_files} | sed -e "s/,\$//") ] "
   [ $# = 0 ] || str="$*"
   git commit -m "${message}
   ${str}"
